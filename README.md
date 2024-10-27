@@ -33,8 +33,8 @@ Em breve, implementaremos a integração com o banco de dados para um gerenciame
 
 ## ⚙️ Tecnologias Utilizadas
 
-- **Front-end:** HTML5, CSS3, JavaScript
-- **Bibliotecas e Frameworks:** Font Awesome
+- **Front-end:** React, Sass, JavaScript
+- **Bibliotecas e Frameworks:** React Boostrap, Boostrap 5
 - **Versionamento:** Git & GitHub
 
 ## 🚀 Como Funciona
