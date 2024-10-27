@@ -1,0 +1,438 @@
+//section 1
+
+.hero {
+    display: flex;
+    padding-inline: 1.25rem;
+    padding-top: 15rem;
+    overflow: hidden;
+    max-width: 1280px;
+    margin-inline: auto;
+}
+
+.hero__title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    font-weight: 500;
+    letter-spacing: -0.09em;
+    margin-top: 0.75rem;
+}
+
+.hero__left {
+    flex: 2;
+}
+
+.hero__right {
+    flex: 2;
+}
+
+.hero__description {
+    font-size: 0.9rem;
+    opacity: 0.6;
+    font-weight: 300;
+    line-height: calc(1em + 0.5rem);
+    margin-block: 2.20rem; /* espaço  cima é baixo */
+    max-width: 55ch;
+    margin-left: 20%;
+}
+
+.hero_btn {
+    background: transparent;
+    padding: 1em 2rem;
+    border-radius: 10px;
+    border: 2px solid #811dc3;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.hero_btnCadastro {
+    background: transparent;
+    padding: 1em 2rem;
+    border-radius: 10px;
+    border: 2px solid #811dc3;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+}
+
+.hero_btnCadastro:hover {
+    background-color: #811dc3;
+    transform: translateY(-4px); 
+    box-shadow: 0 5px 20px #811dc3; 
+}
+
+.hero_btn:hover {
+    background-color: #811dc3;
+    transform: translateY(-4px); 
+    box-shadow: 0 5px 20px #811dc3; 
+}
+
+/* HERO IMG */
+
+.hero__img {
+    transform: rotate(15deg);
+    max-width: 760px;
+    animation: float 4s ease-in-out infinite;
+    width: 180%;
+}
+
+.hero_btnCrypto {
+    background: transparent;
+    padding: 1em 2rem;
+    border-radius: 10px;
+    border: 2px solid #811dc3;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+}
+
+.hero_btnCrypto:hover {
+    background-color: #811dc3;
+    transform: translateY(-4px); 
+    box-shadow: 0 5px 20px #811dc3; 
+}
+
+
+
+//section 2
+
+
+.hero_btnCrypto {
+    background-color: #811dc3;
+    border: 2px solid #811dc3;
+    border-radius: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: #fff;
+    padding: 10px 14px;
+    margin-top: 60px;
+}
+
+.hero_btnCrypto:hover {
+    background-color: #811dc3;
+    transform: translateY(-4px); 
+    box-shadow: 0 5px 20px #811dc3; 
+}
+//section 3
+
+.coins-info {
+    text-align: center;
+    padding: 20px 20px;
+    margin-top: 5%;
+
+    h2 {
+        text-align: center;
+        font-size: 2.2rem;
+        color: #811dc3;
+        margin-bottom: 30px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+}
+
+/* Estilos dos Cards de Moedas */
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 10%;
+    margin-top: 5%;
+}
+
+.card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fade 3s ease-in;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0; /* Começa invisível */
+    }
+    100% {
+        opacity: 3; /* Totalmente visível */
+    }
+}
+
+.card:hover {
+    transform: translateY(-4px); 
+    box-shadow: 0 5px 20px #000; 
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); 
+    }
+}
+
+
+.coin-img {
+    margin-left: 36%;
+    margin-bottom: 10px;
+    animation: float 3s ease-in-out infinite;
+    
+}
+
+@media (max-width: 768px) {
+   
+    .hero_btn {
+        margin-top: 15px;
+        margin-left: 14%;
+    }
+    
+    .hero_btnCadastro {
+        margin-left: 16%;
+    }
+
+    .hero_btnCrypto {
+        margin-left: 5%;
+    }
+
+    .hero__img {
+        width: 120%;
+    }
+
+    h2 {
+        font-size: 2rem; // Reduzir o tamanho do título em telas pequenas
+    }
+
+    .card {
+        width: calc(50% - 10px); // Ajustar a largura em telas menores
+        margin: 13px; // Espaçamento reduzido
+    }
+    
+
+}
+
+.modal-custom {
+    // Outros estilos do modal
+    .modal-content {
+      margin-top: 40%; // Ajuste o valor conforme necessário
+    }
+  }
+  
+  .crypto-advantages { 
+    max-width: 100%;
+    overflow-x: hidden;
+    background-color: #fff;
+    color: #000; // Cor do texto
+    padding: 40px 0; // Espaçamento em cima e embaixo
+
+    h2 {
+        text-align: center;
+        font-size: 2.2rem;
+        color: #811dc3;
+        margin-bottom: 30px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .card {
+        background-color: #fff;
+        color: #000;
+        border-radius: 10px; // Bordas arredondadas
+        transition: transform 0.3s, box-shadow 0.3s; // Transição suave
+        margin: 20px; // Margem reduzida para encurtar espaço entre os cards
+
+        &:hover {
+            transform: translateY(-10px); // Levantar card ao passar o mouse
+            box-shadow: 0 5px 20px #000; // Sombra do card
+        }
+    }
+
+    .card-body {
+        padding: 10px; // Espaçamento interno do card
+
+        .mb-3 {
+            color: #811dc3; // Cor do ícone
+        }
+    }
+
+    .card-title {
+        font-size: 1.5rem; // Tamanho do título do card
+        margin-bottom: 15px; // Espaço abaixo do título
+    }
+
+
+}   
+
+.btn-crypto {
+    background-color: #811dc3;
+    border: 2px solid #811dc3 !important;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px 12px;
+    margin-top: 6px;   
+}
+.btn-crypto:hover {
+    background-color: #811dc3;
+    opacity: 0.6;
+    transform: translateY(-4px); 
+    // box-shadow: 0 5px 20px #811dc3; 
+}
+
+
+
+.start-now-crypto {
+    max-width: 100%;
+    overflow-x: hidden;
+    background-color: #fff;
+    padding: 40px 25px;
+
+    h2 {
+        text-align: center;
+        font-size: 2.2rem;
+        color: #811dc3;
+        margin-bottom: 30px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+      }
+
+
+      .card {
+        transition: transform 0.3s ease;
+    
+        &:hover {
+          transform: scale(1.05); // Aumenta o card levemente ao passar o mouse
+        }
+
+        .card-body {
+            text-align: center;
+      
+
+            .mb-3 {
+                color: #811dc3;
+            }
+
+            .card-title {
+              font-size: 1.25rem;
+              font-weight: 600;
+              color: #000;
+            }
+      
+            .card-text {
+              font-size: 1rem;
+              color: #6c757d;
+            }
+    }
+}
+}
+
+
+.container-fluid {
+    padding: 0;
+    margin: 0;
+    background-color: #f8f9fa; // Fundo claro
+  }
+  
+  .investment-tips-section {
+    padding: 3rem; // Espaçamento interno
+    width: 100vw; // Ocupar a largura total da tela
+    min-height: 100vh; // Ocupar a altura total da tela
+    box-sizing: border-box; // Incluir padding na largura e altura
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .investment-tips-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #811dc3;
+    margin-bottom: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  .investment-tips-list {
+    list-style-type: none; // Remove os marcadores padrão
+    padding: 0; // Remove o preenchimento padrão
+    margin: 0;
+    width: 100%;
+    max-width: 1200px; // Limita a largura máxima para maior legibilidade
+  }
+  
+  .investment-tip-item {
+    justify-content: center;
+    font-size: 1.25rem; // Tamanho da fonte para as dicas
+    color: #000; // Cor do texto
+    margin-bottom: 1.5rem; // Espaçamento abaixo de cada item
+    display: flex; // Alinha ícone e texto
+    align-items: center;  
+    i {
+      color: #811dc3; // Cor dos ícones
+      margin-right: 1rem; // Espaçamento entre o ícone e o texto
+      font-size: 1.5rem; // Tamanho do ícone
+    }
+  }
+  
+  
+  .testimonials {
+    background-color: #fff; // Fundo branco
+    width: 100vw; // Ocupa toda a largura da tela
+    padding: 3rem 1.5rem; // Espaçamento interno
+    // box-sizing: border-box; // Inclui o padding na largura total
+  
+    h2 {
+        text-align: center;
+        font-size: 2.2rem;
+        color: #811dc3;
+        margin-bottom: 30px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+  
+    .blockquote {
+      background-color: #f8f9fa; // Fundo claro para o bloco de citação
+      padding: 2rem; // Espaçamento interno no bloco de citação
+      margin-bottom: 2rem; // Espaçamento entre os blocos
+      border-radius: 0.5rem; // Bordas arredondadas
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Sombra sutil
+  
+      p {
+        font-size: 1.25rem; // Tamanho do texto das citações
+        color: #333; // Cor do texto
+      }
+  
+      .blockquote-footer {
+        margin-top: 1rem; // Espaçamento acima do rodapé da citação
+        font-size: 1rem; // Tamanho do rodapé da citação
+        color: #666; // Cor do rodapé
+        font-style: italic; // Estilo itálico para os nomes
+      }
+    }
+  
+    @media (min-width: 768px) {
+      padding: 4rem 2rem; // Ajusta o padding em telas maiores
+  
+      h2 {
+        font-size: 2.5rem; // Aumenta o tamanho do título em telas maiores
+      }
+  
+      .blockquote {
+        max-width: 800px; // Limita a largura do bloco de citação
+        margin-left: auto;
+        margin-right: auto; // Centraliza o bloco de citação em telas grandes
+      }
+    }
+  }
+  
+
+
+.btn-infosCrypto {
+    background-color: #811dc3;
+    border: none;
+}
+
+.btn-infosCrypto:hover {
+    background-color: #811dc3;
+    opacity: 0.6 !important;
+}

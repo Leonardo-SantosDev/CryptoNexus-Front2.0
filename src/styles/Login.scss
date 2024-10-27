@@ -1,0 +1,71 @@
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  // button {
+  //   background-color: #811dc3;
+  //   color: #fff;
+  //   border: none;
+  // }
+
+  // button:hover {
+  //   background-color: #811dc3 !important;
+  //   color: #fff !important;
+
+  // }
+
+    .rounded-card {
+      border-radius: 20px;
+      padding: 20px;
+  
+      // Ícone dentro do input
+      .icon-input {
+        position: absolute;
+        right: 60px; // Alinha o ícone à direita dentro do input
+        color: #811dc3;
+        top: 20px;
+        cursor: pointer; // Adiciona o cursor de clique para o ícone de senha
+      }
+  
+      // Contêiner para inputs com ícones
+      .input-icon {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+  
+      // Estilização dos inputs
+      .rounded-input {
+        border-radius: 15px;
+        padding-right: 35px; // Espaço para o ícone à direita
+        width: 60%; // Ajusta a largura do input
+      }
+  
+      // Ícones das redes sociais na tela de login
+      .social-icons {
+        display: flex;
+        justify-content: space-around; // Distribui os ícones igualmente
+        margin-top: 20px;
+  
+        .icon {
+          font-size: 1.5rem; // Tamanho dos ícones
+          color: #811dc3;
+          transition: color 0.2s;
+  
+          &:hover {
+            color: #811dc3; // Altera a cor ao passar o mouse
+          }
+        }
+      }
+  
+      // Estilo para o texto dos termos e políticas
+      .terms-container {
+        text-align: center; // Centraliza o texto dos termos
+        margin: 20px 0;
+      }
+    }
+  }
+  
