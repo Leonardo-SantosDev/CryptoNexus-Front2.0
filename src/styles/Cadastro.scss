@@ -15,3 +15,11 @@
     border-radius: 10px; /* Cantos arredondados */
   }
   
+  .btn-cadastro {
+    background-color: #811dc3;
+    border: none;
+
+    &:hover {
+      background-color: #561b7e !important;
+    }
+  }

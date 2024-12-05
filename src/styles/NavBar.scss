@@ -1,47 +1,33 @@
-.navbar {
-    background: #fff;
-}
+.navbar-custom {
+    background-color: transparent !important; 
+  }
 
-/* Alterar a cor do texto da marca (Navbar.Brand) */
-.container-nav .navbar-brand {
-    color: #000 !important;  /* Defina a cor desejada */
-}
+  .container-nav {
+    background-color: transparent !important;
+  }
+  
+  .navbar-custom .nav-link {
+    color: #000 !important; // Cor dos links
+    font-weight: 800; // Peso intermediário (deixa os nomes mais destacados)
+    text-transform: capitalize; // Opcional: Faz a primeira letra de cada palavra ficar maiúscula
+    &:hover {
+      color: #4a0f72 !important; // Cor ao passar o mouse
+      font-weight: bold; // Deixa mais evidente no hover
+    }
+  }
+  
+  .navbar-custom .navbar-brand {
+    margin-left: 1%;
+    color: #000 !important;
+    font-weight: bold; // Marca o nome da marca com um peso maior
+    &:hover {
+      color: #4a0f72 !important;
+    }
+  }
+  
+  
 
-/* Alterar a cor dos links de navegação (Nav.Link) */
-.container-nav .nav-link {
-    color: #000!important;  /* Cor padrão */
-}
 
-.container-nav .nav-link:hover {
-    color: #000!important;  /* Cor ao passar o mouse */
-}
-
-/* Alterar a cor do dropdown (NavDropdown) */
-.container-nav .dropdown-item {
-    color: #000 !important;  /* Cor padrão dos itens do dropdown */
-}
-
-.container-nav .dropdown-item:hover {
-    color: #000 !important;  /* Cor ao passar o mouse */
-}
-
-/* Alterar a cor do título do dropdown */
-.container-nav .dropdown-toggle {
-    color: #000 !important;  /* Cor do título */
-}
-
-.btn-Login {
-    background-color: transparent;
-    border: 1px solid #8A2BE2 !important;
-    color: #000;
-    padding: 10px 20px;
-    margin-right: 30px;
-    border-radius: 13px;
-}
-
-.btn-Login:hover {
-    background-color: #8A2BE2 !important;
-}
 
 /* Estilos para o botão toggle */
 .menu-toogle {

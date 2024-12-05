@@ -68,4 +68,24 @@
       }
     }
   }
-  
+
+
+.btn-modal-login:hover{
+  background-color: #561b7e !important;
+}
+
+
+.mantem-conect {
+  justify-content: center;
+  gap: 12px;
+  margin-right: 5%;
+}
+
+.btn-login {
+  background-color: #811dc3;
+  border: none;
+
+  &:hover{
+    background-color: #561b7e !important;
+  }
+}

@@ -1,125 +1,72 @@
 //section 1
 
-.hero {
-    display: flex;
+.container-principal {
     padding-inline: 1.25rem;
-    padding-top: 15rem;
+    padding-top: 17rem;
     overflow: hidden;
     max-width: 1280px;
     margin-inline: auto;
+    text-align: center;
 }
 
-.hero__title {
-    font-size: 2.5rem;
-    line-height: 1.2;
-    font-weight: 500;
-    letter-spacing: -0.09em;
-    margin-top: 0.75rem;
-}
-
-.hero__left {
-    flex: 2;
-}
-
-.hero__right {
-    flex: 3;
-}
-
-.hero__description {
-    font-size: 0.9rem;
-    opacity: 0.6;
+.texto {
+    margin-top: 2%; /* Adiciona um pequeno espaçamento no topo */
+    font-size: 1.2rem;
     font-weight: 300;
-    line-height: calc(1em + 0.5rem);
-    margin-block: 2.20rem; /* espaço  cima é baixo */
-    max-width: 55ch;
-    margin-left: 20%;
+    line-height: 1.6rem;
+    word-spacing: 4px;
+    width: 600px;
+    text-align: center; /* Centraliza o texto horizontalmente */
+    margin-left: auto; /* Garante que a margem à esquerda seja automática */
+    margin-right: auto; /* Garante que a margem à direita seja automática */
 }
 
-.hero_btn {
+
+.ajuste{
+    margin-top: -40px;
+}
+
+.btn-CriarConta {
     background: transparent;
     padding: 1em 2rem;
     border-radius: 10px;
     border: 2px solid #811dc3;
     color: #fff;
     outline: none;
+    margin-left: 10px;
+     margin-top: 3%;
     cursor: pointer;
-    margin-left: 20px;
+    &:hover {
+        background-color: #811dc3;
+        transform: translateY(-4px); 
+        box-shadow: 0 5px 20px #811dc3; 
+    }
 }
 
-.hero_btnCadastro {
+.btn-fazerLogin {
     background: transparent;
     padding: 1em 2rem;
     border-radius: 10px;
     border: 2px solid #811dc3;
     color: #fff;
     outline: none;
+    margin-inline: 2.7rem;
     cursor: pointer;
+
+    &:hover {
+        background-color: #811dc3;
+        transform: translateY(-4px); 
+        box-shadow: 0 5px 20px #811dc3; 
+    }
+
 }
 
-.hero_btnCadastro:hover {
-    background-color: #811dc3;
-    transform: translateY(-4px); 
-    box-shadow: 0 5px 20px #811dc3; 
-}
-
-.hero_btn:hover {
-    background-color: #811dc3;
-    transform: translateY(-4px); 
-    box-shadow: 0 5px 20px #811dc3; 
-}
-
-/* HERO IMG */
-
-.hero__img {
-    transform: rotate(15deg);
-    max-width: 760px;
-    animation: float 4s ease-in-out infinite;
-    width: 180%;
-}
-
-.hero_btnCrypto {
-    background: transparent;
-    padding: 1em 2rem;
-    border-radius: 10px;
-    border: 2px solid #811dc3;
-    color: #fff;
-    outline: none;
-    cursor: pointer;
-}
-
-.hero_btnCrypto:hover {
-    background-color: #811dc3;
-    transform: translateY(-4px); 
-    box-shadow: 0 5px 20px #811dc3; 
-}
-
-
-
-//section 2
-
-
-.hero_btnCrypto {
-    background-color: #811dc3;
-    border: 2px solid #811dc3;
-    border-radius: 10px;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
-    color: #fff;
-    padding: 10px 14px;
-    margin-top: 60px;
-}
-
-.hero_btnCrypto:hover {
-    background-color: #811dc3;
-    transform: translateY(-4px); 
-    box-shadow: 0 5px 20px #811dc3; 
-}
 //section 3
 
 .coins-info {
     text-align: center;
     padding: 20px 20px;
-    margin-top: 5%;
+    margin-top: 10%;
 
     h2 {
         text-align: center;
@@ -127,6 +74,7 @@
         color: #811dc3;
         margin-bottom: 30px;
         font-family: Georgia, 'Times New Roman', Times, serif;
+        margin-top: 8%;
     }
 }
 
@@ -183,21 +131,15 @@
 
 @media (max-width: 768px) {
    
-    .hero_btn {
-        margin-top: 15px;
-        margin-left: 14%;
-    }
-    
-    .hero_btnCadastro {
-        margin-left: 16%;
+    .container-principal {
+        margin-top: -20%;
     }
 
-    .hero_btnCrypto {
-        margin-left: 5%;
-    }
-
-    .hero__img {
-        width: 120%;
+    .texto {
+        font-size: 14px;
+        max-width: 40ch;
+        line-height: 1.5rem;
+        
     }
 
     h2 {
@@ -435,4 +377,76 @@
 .btn-infosCrypto:hover {
     background-color: #811dc3;
     opacity: 0.6 !important;
+}
+
+@media (max-width: 1366px) {
+    .container-principal {
+        padding-inline: 1rem; /* Ajuste a margem lateral */
+        padding-top: 15rem; /* Reduza o padding superior para telas menores */
+    }
+
+    .texto {
+        width: 600px; /* Ajuste a largura do texto */
+        margin-left: 15%; /* Ajuste a margem esquerda */
+    }
+
+    .btn-CriarConta, .btn-fazerLogin {
+        padding: 0.8em 1.8rem; /* Ajuste o tamanho dos botões */
+        font-size: 1rem; /* Ajuste o tamanho da fonte */
+    }
+
+    .coins-info h2 {
+        font-size: 1.8rem; /* Ajuste o tamanho do título */
+    }
+
+    .cards-container {
+        gap: 20px; /* Reduza o espaçamento entre os cards */
+    }
+
+    .card {
+        width: calc(33.33% - 20px); /* Ajuste a largura dos cards em telas menores */
+        margin: 10px; /* Ajuste a margem entre os cards */
+    }
+
+    .coin-img {
+        margin-left: 30%; /* Ajuste a posição da imagem da moeda */
+    }
+
+    .modal-custom .modal-content {
+        margin-top: 30%; /* Ajuste o espaço superior do modal */
+    }
+
+    .crypto-advantages h2 {
+        font-size: 2rem; /* Ajuste o tamanho do título */
+    }
+
+    .btn-crypto {
+        padding: 8px 10px; /* Ajuste o padding do botão */
+        font-size: 18px; /* Ajuste o tamanho da fonte */
+    }
+
+    .start-now-crypto h2 {
+        font-size: 2rem; /* Ajuste o tamanho do título */
+    }
+
+    .card {
+        width: calc(50% - 10px); /* Ajuste a largura dos cards */
+        margin: 10px; /* Ajuste a margem entre os cards */
+    }
+
+    .investment-tips-title {
+        font-size: 1.8rem; /* Ajuste o tamanho do título */
+    }
+
+    .investment-tip-item {
+        font-size: 1.1rem; /* Ajuste o tamanho do texto */
+    }
+
+    .testimonials h2 {
+        font-size: 2rem; /* Ajuste o tamanho do título */
+    }
+
+    .blockquote {
+        padding: 1.5rem; /* Ajuste o padding do bloco de citação */
+    }
 }

@@ -1,38 +1,33 @@
 import React, { useState } from 'react';
 import { Container, Card, Form, Button, Modal } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faEnvelope, faAddressCard, faEye, faEyeSlash, faTimes } from '@fortawesome/free-solid-svg-icons';
-import '../../styles/Cadastro.scss'; // Importar um arquivo CSS separado para estilos
-import InputMask from 'react-input-mask'; // Importação da biblioteca de máscara
+import { faUser, faEnvelope, faAddressCard, faEye, faEyeSlash, faTimes, faPhone } from '@fortawesome/free-solid-svg-icons';
+import '../../styles/Cadastro.scss';
+import InputMask from 'react-input-mask';
 
-const RegistrationForm = () => {
-  const [showModal, setShowModal] = useState(false); // Estado para controlar a exibição do modal
-  const [modalContent, setModalContent] = useState(''); // Estado para definir o conteúdo do modal
-  const [showPassword, setShowPassword] = useState(false); // Estado para controlar a visibilidade da senha
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false); // Estado para controlar a visibilidade da senha de confirmação
+const FormularioCadastro = () => {
+  const [mostrarModal, setMostrarModal] = useState(false);
+  const [conteudoModal, setConteudoModal] = useState('');
+  const [mostrarSenha, setMostrarSenha] = useState(false);
+  const [mostrarConfirmarSenha, setMostrarConfirmarSenha] = useState(false);
 
-  // Função para abrir o modal com o conteúdo correto (termos ou política)
-  const handleShowModal = (content) => {
-    setModalContent(content);
-    setShowModal(true);
+  const abrirModal = (conteudo) => {
+    setConteudoModal(conteudo);
+    setMostrarModal(true);
   };
 
-  // Função para fechar o modal
-  const handleCloseModal = () => setShowModal(false);
+  const fecharModal = () => setMostrarModal(false);
 
-  // Função para redirecionar para a página inicial
-  const handleGoBack = () => {
-    window.location.href = '/'; // Ajuste esta linha conforme necessário
+  const voltarParaPaginaInicial = () => {
+    window.location.href = '/';
   };
 
-  // Função para alternar a visibilidade da senha
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
+  const alternarVisibilidadeSenha = () => {
+    setMostrarSenha(!mostrarSenha);
   };
 
-  // Função para alternar a visibilidade da senha de confirmação
-  const toggleConfirmPasswordVisibility = () => {
-    setShowConfirmPassword(!showConfirmPassword);
+  const alternarVisibilidadeConfirmarSenha = () => {
+    setMostrarConfirmarSenha(!mostrarConfirmarSenha);
   };
 
   return (
@@ -42,11 +37,11 @@ const RegistrationForm = () => {
           icon={faTimes} 
           className="position-absolute" 
           style={{ right: '15px', top: '15px', cursor: 'pointer' }} 
-          onClick={handleGoBack} 
+          onClick={voltarParaPaginaInicial} 
         />
         <Card.Title className="text-center">CryptoNexus-Cadastro</Card.Title>
         <Form action="/submit" method="POST">
-          <Form.Group controlId="name" className="mb-3">
+          <Form.Group controlId="nome" className="mb-3">
             <Form.Label>Nome e sobrenome</Form.Label>
             <div className="input-icon d-flex justify-content-center">
               <Form.Control 
@@ -54,7 +49,7 @@ const RegistrationForm = () => {
                 placeholder="Ex: Pedro nascimento" 
                 required 
                 className="rounded-input" 
-                style={{ width: '60%' }} // Ajusta a largura do input
+                style={{ width: '60%' }} 
               />
               <FontAwesomeIcon icon={faUser} className="position-absolute icon-input" />
             </div>
@@ -68,60 +63,74 @@ const RegistrationForm = () => {
                 placeholder="Ex: cryptonxs@gmail.com" 
                 required 
                 className="rounded-input" 
-                style={{ width: '60%' }} // Ajusta a largura do input
+                style={{ width: '60%' }} 
               />
               <FontAwesomeIcon icon={faEnvelope} className="position-absolute icon-input" />
             </div>
           </Form.Group>
   
+          <Form.Group controlId="Telefone" className="mb-3">
+            <Form.Label>Telefone</Form.Label>
+            <div className="input-icon d-flex justify-content-center">
+              <InputMask 
+                mask="(99) 99999-9999" 
+                placeholder="(99) 9 9999-9999" 
+                required 
+                className="form-control rounded-input" 
+                style={{ width: '60%' }} 
+              />
+              <FontAwesomeIcon icon={faPhone} className="position-absolute icon-input" />
+            </div>
+          </Form.Group>
+
+
           <Form.Group controlId="cpf" className="mb-3">
             <Form.Label>CPF</Form.Label>
             <div className="input-icon d-flex justify-content-center">
-              {/* O componente InputMask é usado aqui para aplicar a máscara de CPF */}
               <InputMask 
-                mask="999.999.999-99" // Define a máscara para o formato do CPF
+                mask="999.999.999-99" 
                 placeholder="999.764.842-98" 
                 required 
                 className="form-control rounded-input" 
-                style={{ width: '60%' }} // Ajusta a largura do input
+                style={{ width: '60%' }} 
               />
               <FontAwesomeIcon icon={faAddressCard} className="position-absolute icon-input" />
             </div>
           </Form.Group>
   
-          <Form.Group controlId="password" className="mb-3">
+          <Form.Group controlId="senha" className="mb-3">
             <Form.Label>Senha</Form.Label>
             <div className="input-icon d-flex justify-content-center">
               <Form.Control 
-                type={showPassword ? 'text' : 'password'} // Altera entre 'text' e 'password'
+                type={mostrarSenha ? 'text' : 'password'} 
                 placeholder="•••••" 
                 required 
                 className="rounded-input" 
-                style={{ width: '60%' }} // Ajusta a largura do input
+                style={{ width: '60%' }} 
               />
               <FontAwesomeIcon 
-                icon={showPassword ? faEyeSlash : faEye} // Altera o ícone dependendo do estado
+                icon={mostrarSenha ? faEyeSlash : faEye} 
                 className="position-absolute icon-input" 
-                onClick={togglePasswordVisibility} // Alterna a visibilidade
+                onClick={alternarVisibilidadeSenha} 
                 style={{ cursor: 'pointer' }} 
               />
             </div>
           </Form.Group>
   
-          <Form.Group controlId="confirmPassword" className="mb-3">
+          <Form.Group controlId="confirmarSenha" className="mb-3">
             <Form.Label>Confirmar Senha</Form.Label>
             <div className="input-icon d-flex justify-content-center">
               <Form.Control 
-                type={showConfirmPassword ? 'text' : 'password'} // Altera entre 'text' e 'password'
+                type={mostrarConfirmarSenha ? 'text' : 'password'} 
                 placeholder="•••••" 
                 required 
                 className="rounded-input" 
-                style={{ width: '60%' }} // Ajusta a largura do input
+                style={{ width: '60%' }} 
               />
               <FontAwesomeIcon 
-                icon={showConfirmPassword ? faEyeSlash : faEye} // Altera o ícone dependendo do estado
+                icon={mostrarConfirmarSenha ? faEyeSlash : faEye} 
                 className="position-absolute icon-input" 
-                onClick={toggleConfirmPasswordVisibility} // Alterna a visibilidade
+                onClick={alternarVisibilidadeConfirmarSenha} 
                 style={{ cursor: 'pointer' }} 
               />
             </div>
@@ -130,33 +139,32 @@ const RegistrationForm = () => {
           <Form.Group className="mb-3 terms-container">
             <Form.Check 
               type="checkbox" 
-              id="terms" 
-              label={
+              id="termos" 
+              label={(
                 <>
-                  Aceito os <span onClick={() => handleShowModal('terms')} style={{ cursor: 'pointer', color: '#811dc3' }}>termos e condições</span> | <span onClick={() => handleShowModal('privacy')} style={{ cursor: 'pointer', color: '#811dc3' }}>política de privacidade</span>
+                  Aceito os <span onClick={() => abrirModal('termos')} style={{ cursor: 'pointer', color: '#811dc3' }}>termos e condições</span> | <span onClick={() => abrirModal('privacidade')} style={{ cursor: 'pointer', color: '#811dc3' }}>política de privacidade</span>
                 </>
-              }
+              )}
               required 
             />
           </Form.Group>
   
-          <Button variant="primary" type="submit" className="w-70">
+          <Button type="submit" className="w-70 btn-cadastro" >
             Finalizar cadastro
           </Button>
   
           <div className="text-center mt-3">
-            <a href="../auth/login.js">Ou iniciar sessão</a>
+            <a href="/Login">Ou iniciar sessão</a>
           </div>
         </Form>
       </Card>
   
-            {/* Modal */}
-            <Modal show={showModal} onHide={handleCloseModal} centered>
+      <Modal show={mostrarModal} onHide={fecharModal} centered>
         <Modal.Header closeButton>
-          <Modal.Title>{modalContent === 'terms' ? 'Termos e Condições' : 'Política de Privacidade'}</Modal.Title>
+          <Modal.Title>{conteudoModal === 'termos' ? 'Termos e Condições' : 'Política de Privacidade'}</Modal.Title>
         </Modal.Header>
         <Modal.Body style={{ marginTop: '20px' }}>
-          {modalContent === 'terms' ? (
+          {conteudoModal === 'termos' ? (
             <div>
               <h5>Termos e Condições</h5>
               <p>1. Aceitação dos Termos<br />
@@ -189,36 +197,25 @@ const RegistrationForm = () => {
               <p>A política de privacidade do CryptoNexus descreve como coletamos, usamos e protegemos as informações dos usuários. Ao utilizar a plataforma, você concorda com a coleta e uso de suas informações de acordo com esta política.</p>
   
               <p>1. Informações que Coletamos<br />
-              Coletamos informações pessoais, como nome, e-mail e CPF, quando você se registra na plataforma. Também podemos coletar informações não pessoais, como dados de uso e cookies, para melhorar sua experiência.</p>
+              Coletamos informações pessoais, como nome, e-mail e número de CPF, para fornecer os serviços da plataforma. Também coletamos dados de navegação e transações para melhorar a experiência do usuário.</p>
   
-              <p>2. Uso das Informações<br />
-              Utilizamos suas informações para fornecer e melhorar nossos serviços, entrar em contato com você sobre sua conta e enviar informações relevantes sobre investimentos em criptomoedas.</p>
+              <p>2. Como Usamos as Informações<br />
+              As informações coletadas são usadas para fornecer e melhorar os serviços da plataforma, como a criação de contas, simulações de transações e troca de moedas.</p>
   
-              <p>3. Compartilhamento de Informações<br />
-              Não compartilhamos suas informações pessoais com terceiros sem sua permissão, exceto quando exigido por lei ou para proteger nossos direitos.</p>
+              <p>3. Proteção das Informações<br />
+              Tomamos medidas razoáveis para proteger as informações pessoais contra acesso não autorizado, alteração, divulgação ou destruição.</p>
   
-              <p>4. Segurança das Informações<br />
-              Tomamos medidas razoáveis para proteger suas informações pessoais contra acesso não autorizado, uso indevido ou divulgação. No entanto, nenhuma transmissão de dados pela Internet pode ser garantida como 100% segura.</p>
+              <p>4. Compartilhamento de Informações<br />
+              Não compartilhamos suas informações pessoais com terceiros, exceto quando necessário para cumprir com as leis ou em resposta a uma solicitação legal.</p>
   
               <p>5. Seus Direitos<br />
-              Você tem o direito de acessar, corrigir ou excluir suas informações pessoais a qualquer momento. Entre em contato conosco se desejar exercer esses direitos.</p>
-  
-              <p>6. Alterações na Política<br />
-              Reservamo-nos o direito de modificar esta política de privacidade a qualquer momento. Quaisquer alterações serão publicadas nesta página e sua continuação no uso da plataforma após tais modificações constituirá sua aceitação da nova política.</p>
-  
-              <p>7. Contato<br />
-              Se você tiver dúvidas sobre nossa política de privacidade, entre em contato conosco através do e-mail [cryptonexusinvestimentos@gmail.com].</p>
+              Você tem o direito de acessar, corrigir e excluir suas informações pessoais armazenadas conosco. Se desejar exercer esses direitos, entre em contato conosco através do e-mail [cryptonexusinvestimentos@gmail.com].</p>
             </div>
           )}
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleCloseModal}>
-            Fechar
-          </Button>
-        </Modal.Footer>
       </Modal>
     </Container>
   );
 };
 
-export default RegistrationForm;
+export default FormularioCadastro;
