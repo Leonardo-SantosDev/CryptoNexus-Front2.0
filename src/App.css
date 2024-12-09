@@ -10,7 +10,6 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    margin: 0;
     background: #2C003E !important;
     font-family: "Nunito", system-ui;
     overflow-x: hidden;
