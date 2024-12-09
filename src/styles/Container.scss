@@ -137,21 +137,25 @@
 
     .texto {
         font-size: 14px;
-        max-width: 40ch;
+        max-width: 55ch;
         line-height: 1.5rem;
         
-    }
-
-    h2 {
-        font-size: 2rem; // Reduzir o tamanho do título em telas pequenas
     }
 
     .card {
         width: calc(50% - 10px); // Ajustar a largura em telas menores
         margin: 13px; // Espaçamento reduzido
     }
-    
+      
+    h2 {
+      font-size: 2.5rem; // Aumenta o tamanho do título em telas maiores
+    }
 
+    .blockquote {
+      max-width: 800px; // Limita a largura do bloco de citação
+      margin-left: auto;
+      margin-right: auto; // Centraliza o bloco de citação em telas grandes
+    }
 }
 
 .modal-custom {
@@ -351,20 +355,6 @@
         font-style: italic; // Estilo itálico para os nomes
       }
     }
-  
-    @media (min-width: 768px) {
-      padding: 4rem 2rem; // Ajusta o padding em telas maiores
-  
-      h2 {
-        font-size: 2.5rem; // Aumenta o tamanho do título em telas maiores
-      }
-  
-      .blockquote {
-        max-width: 800px; // Limita a largura do bloco de citação
-        margin-left: auto;
-        margin-right: auto; // Centraliza o bloco de citação em telas grandes
-      }
-    }
   }
   
 
@@ -382,12 +372,12 @@
 @media (max-width: 1366px) {
     .container-principal {
         padding-inline: 1rem; /* Ajuste a margem lateral */
-        padding-top: 15rem; /* Reduza o padding superior para telas menores */
+        padding-top: 9rem; /* Reduza o padding superior para telas menores */
     }
 
     .texto {
         width: 600px; /* Ajuste a largura do texto */
-        margin-left: 15%; /* Ajuste a margem esquerda */
+        margin-left: 27%; /* Ajuste a margem esquerda */
     }
 
     .btn-CriarConta, .btn-fazerLogin {
