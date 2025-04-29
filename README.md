@@ -1,12 +1,44 @@
-# React + Vite
+# 💰 Crypto-Nexus2.0
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Crypto-Nexus2.0** é uma plataforma web em desenvolvimento, criada com **React + Vite**, com o objetivo de ajudar iniciantes a entender, simular e investir com segurança no universo das criptomoedas.
 
-Currently, two official plugins are available:
+## 🚀 Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 📊 Simulação de investimentos em criptoativos
+- 🔒 Informações seguras e verificadas para novos investidores
+- 📚 Glossário com os principais termos do mercado cripto
+- ❓ Quiz interativo: "Você está pronto para investir?"
+- 📈 Visualização de preços em tempo real (em breve)
+- 🛎️ Alertas de mercado (em desenvolvimento)
 
-## Expanding the ESLint configuration
+## 🛠️ Tecnologias utilizadas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+- [CSS Modules](https://github.com/css-modules/css-modules)
+- [Font Awesome](https://fontawesome.com/) (ícones)
+
+## 📁 Estrutura do projeto
+
+- **src**: Contém os componentes React, módulos de estilo (CSS Modules) e arquivos principais do front-end.
+- **public**: Arquivos estáticos, como ícones e imagens.
+- **package.json**: Gerenciamento de dependências e scripts.
+
+> 🚧 **Atenção**: O projeto está **em desenvolvimento**, com várias funcionalidades ainda em progresso, como a visualização de preços em tempo real e alertas de mercado.
+
+## 🔧 Como rodar o projeto
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/Leonardo-SantosDev/Crypto-Nexus2.0.git
+
+2. Navegue até o diretório do projeto:
+    cd Crypto-Nexus2.0
+
+3. Instale as dependências:
+    npm install
+
+4. Inicie o servidor de desenvolvimento:
+    npm run dev
+
