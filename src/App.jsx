@@ -14,7 +14,7 @@ function App() {
   return (
     <div className={styles.App}>
       <Router>
-        <Routes>
+        <Routes basename="/CryptoNexus-Front2.0">
           <Route path="/" element={<Home/>} />
           <Route path="/login" element={<Login/>} />
           <Route path="/cadastro" element={<Cadastro />} />
