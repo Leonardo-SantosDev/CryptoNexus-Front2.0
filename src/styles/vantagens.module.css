@@ -1,0 +1,104 @@
+.vantagens {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  gap: 4rem; 
+  padding: 4rem 5vw;
+  flex-wrap: wrap; /* permite quebra em telas menores */
+}
+
+.content {
+  flex: 1 1 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #C084FC, #60A5FA, #7AF0FF, #C084FC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.blocos {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.bloco {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.bloco h3 {
+  font-size: 1.2rem;
+  color: var(--Lavender);
+  margin-bottom: 0.5rem;
+}
+
+.bloco p {
+  color: var(--Lavender);
+  font-size: 1rem;
+}
+
+.footer {
+  color: var(--Lavender);
+  margin-top: 2rem;
+  font-size: 1rem;
+}
+
+.imageContainer {
+  flex: 1 1 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 700px;
+  margin-top: 2rem;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+.etapa {
+  width: 60px;
+  height: 80px;
+  background-color: #222228;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 50% 100%, 0% 80%); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: var(--Lavender);
+  font-size: 1.5rem;
+}
+
+/* Responsividade extra para mobile */
+@media (max-width: 768px) {
+  .vantagens {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .content,
+  .imageContainer {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .imageContainer {
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,105 @@
+.alertasSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  min-height: 50vh;
+}
+
+.sectionTitle {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+  background: linear-gradient(90deg, #C084FC, #60A5FA, #7AF0FF, #C084FC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.alertasContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.alertaCard {
+  background: #26262B;
+  border-radius: 15px;
+  padding: 2rem;
+  max-width: 350px;
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: var(--Lavender);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  will-change: transform;
+  perspective: 1000px;
+  position: relative;
+}
+
+.alertaCard:hover {
+  transform: scale(1.03) rotateX(5deg) rotateY(-5deg);
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(112, 250, 255, 0.15);
+}
+
+.alertaCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 1px;
+  background: linear-gradient(90deg, #C084FC, #60A5FA, #7AF0FF, #C084FC);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.alertaCard:hover::before {
+  opacity: 1;
+}
+
+.linha {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 4rem auto;
+  width: 80%;
+  margin-top: 10%;
+}
+
+
+.alertaImagem {
+  width: 100px; 
+  height: 100px;
+  object-fit: contain; 
+  margin-bottom: 10px;
+}
+
+.alertaImagem img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.botoesCarrossel {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 2%;
+}
+
+.botaoCarrossel:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}

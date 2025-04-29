@@ -1,0 +1,262 @@
+.containerCriptos {
+    padding: 4rem 2rem;
+    animation: fadeIn 1s ease forwards;
+    opacity: 0;
+    margin-top: -5%;
+    text-align: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tituloCripto {
+    display: inline-block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    background: linear-gradient(90deg, #C084FC, #60A5FA, #7AF0FF, #C084FC);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.cardsWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+.cardCripto {
+    background: #26262B;
+    border-radius: 15px;
+    padding: 2rem;
+    max-width: 350px;
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: var(--Lavender);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    will-change: transform;
+    perspective: 1000px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.cardCripto::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 1px;
+    background: linear-gradient(90deg, #C084FC, #60A5FA, #7AF0FF, #C084FC);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.cardCripto:hover {
+    transform: scale(1.03) rotateX(5deg) rotateY(-5deg);
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(112, 250, 255, 0.15);
+}
+
+.cardCripto:hover::before {
+    opacity: 1;
+}
+
+.cardCripto h3 {
+    font-size: 1.3rem;
+    background: linear-gradient(90deg, #C084FC, #60A5FA, #7AF0FF, #C084FC);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cardCripto p {
+    line-height: 1.5;
+    margin-top: 0.5rem;
+    color: var(--Lavender);
+}
+
+.botaoCripto {
+    margin-top: 3rem;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--Lavender);
+    background: transparent;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    background-image: linear-gradient(var(--bg-principal), var(--bg-principal)),
+        linear-gradient(90deg, #C084FC, #60A5FA, #7AF0FF, #C084FC);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.botaoCripto:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(122, 240, 255, 0.3);
+}
+
+.modalOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    animation: fadeInOverlay 0.5s ease forwards;
+}
+
+@keyframes fadeInOverlay {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.modalContent {
+    background: #1c1c1f;
+    padding: 2rem;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    color: var(--Lavender);
+    text-align: left;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    transform: translateY(-30px);
+    animation: slideInModal 0.5s ease forwards;
+}
+
+@keyframes slideInModal {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modalTitulo {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #C084FC, #60A5FA, #7AF0FF, #C084FC);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.modalTexto {
+    line-height: 1.6;
+    color: var(--Lavender);
+    margin-top: 1rem;
+}
+
+.modalFechar {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    background: transparent;
+    border: none;
+    color: var(--Lavender);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modalFechar:hover {
+    color: var(--roxo_escuro);
+}
+
+.modalFechar:focus {
+    outline: none;
+}
+
+
+.linha {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 4rem auto;
+    width: 80%;
+    margin-top: 10%;
+}
+
+.closeButton {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.closeButton:hover {
+    transform: scale(1.1);
+    color: #ff6b6b;
+}
+
+.closeButton:focus {
+    outline: none;
+}
+
+.criptoImage {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    transition: transform 0.4s ease;
+    animation: float 3s ease-in-out infinite;
+}
+
+.cardCripto:hover .criptoImage {
+    transform: scale(1.1) rotate(3deg);
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}

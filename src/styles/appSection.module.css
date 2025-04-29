@@ -1,0 +1,159 @@
+.appSection {
+    padding: 4rem 2rem;
+    color: var(--Lavender);
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.contentWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6rem;
+    flex-wrap: wrap;
+}
+
+.imageContainer img {
+    max-width: 720px;
+    opacity: 0;
+    animation: slideInLeft 1s forwards 0.3s;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.textContent {
+    max-width: 400px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s forwards 0.3s;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.textContent h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, #C084FC, #60A5FA, #7AF0FF, #C084FC);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.featuresGrid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* === ANIMAÇÃO DE HOVER APRIMORADA PARA .featureBox === */
+.featureBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background-color: #26262B;
+    border-radius: 0.75rem;
+    border: 1px solid #333;
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-radius 0.4s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInBox 0.4s forwards;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    will-change: transform;
+  }
+  
+  .featureBox::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 1.25rem;
+    padding: 1px;
+    background: linear-gradient(90deg, #C084FC, #60A5FA, #7AF0FF, #C084FC);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .featureBox:hover::before {
+    opacity: 1;
+  }
+  
+  .featureBox:hover {
+    transform: scale(1.07) rotate3d(1, 1, 0, 4deg);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 12px rgba(112, 250, 255, 0.3);
+    border-radius: 1.25rem;
+  }
+  
+@keyframes fadeInBox {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    animation: bounceIcon 2s infinite alternate ease-in-out;
+}
+
+@keyframes bounceIcon {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+}
+
+.description {
+    font-size: 0.95rem;
+    color: var(--Lavender);
+    animation: fadeInDescription 2s forwards 0.7s;
+}
+
+@keyframes fadeInDescription {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.linha {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 4rem auto;
+    width: 80%;
+    margin-top: 10%;
+}

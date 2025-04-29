@@ -1,0 +1,62 @@
+.pageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    background-color: #0f0f11;
+  }
+  
+  .sobre {
+    max-width: 700px;
+    background: rgba(28, 26, 32, 0.6);
+    backdrop-filter: blur(12px);
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    font-family: 'Inter', sans-serif;
+    color: var(--Lavender);
+    position: relative;
+  }
+  
+  .closeButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: var(--Lavender);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .closeButton:hover {
+    transform: scale(1.1);
+    color: #ff6b6b;
+  }
+  
+  .sobre h2 {
+    margin-left: 20%;
+    display: inline-block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    background: linear-gradient(90deg, #C084FC, #60A5FA, #7AF0FF, #C084FC);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .subtitulo {
+    text-align: center;
+    font-size: 1rem;
+    color: #d1d5db;
+    margin-bottom: 2rem;
+  }
+  
+  .conteudo p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    color: var(--Lavender);
+  }
+  

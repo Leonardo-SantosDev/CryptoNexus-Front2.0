@@ -1,0 +1,126 @@
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-principal);
+  padding: 1rem 2rem;
+  color: var(--Lavender);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+
+.logo {
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #C084FC, #60A5FA, #7AF0FF, #C084FC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.navLinks {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.navLinks a {
+  color: var(--Lavender);
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.navLinks a:hover {
+  color: #bb86fc;
+}
+
+.loginBtn {
+  padding: 0.55rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--Lavender);
+  border: 2px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  background-image: linear-gradient(var(--bg-principal), var(--bg-principal)),
+    linear-gradient(90deg, #C084FC, #60A5FA, #7AF0FF, #C084FC);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.loginBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(122, 240, 255, 0.3);
+}
+
+.menuToggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background: var(--Lavender);
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  .navLinks {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: var(--bg-principal);
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem 2rem;
+    display: none;
+  }
+
+  .navLinks.active {
+    display: flex;
+  }
+
+  .menuToggle {
+    display: flex;
+  }
+
+  .conta {
+    width: auto; 
+    font-size: 0.9rem; 
+    padding: 0.5rem 0.8rem; 
+  }
+
+
+}
+
+.conta {
+  padding: 0.55rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--Lavender);
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  background-image: linear-gradient(var(--bg-principal), var(--bg-principal)),
+    linear-gradient(90deg, #C084FC, #60A5FA, #7AF0FF, #C084FC);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.conta:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(122, 240, 255, 0.3);
+}

@@ -1,0 +1,123 @@
+.explorarNexus {
+  padding: 4rem 1rem;
+  color: var(--Lavender);
+  text-align: center;
+}
+
+.titulo {
+  display: inline-block;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, #C084FC, #60A5FA, #7AF0FF, #C084FC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.cards {
+  display: grid;
+  padding-left: 15rem;
+  padding-right: 15rem;
+  justify-items: center !important;
+  gap: 1rem;
+}
+
+.card {
+  background-color: #26262B;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  width: 50%;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 0 transparent;
+  position: relative;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 1px;
+  background: linear-gradient(90deg, #C084FC, #60A5FA, #7AF0FF, #C084FC);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.card:hover {
+  transform: scale(1.03) rotateX(5deg) rotateY(-5deg);
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(112, 250, 255, 0.15);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.cardTitulo {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, #C084FC, #60A5FA, #7AF0FF, #C084FC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.cardTexto {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--Lavender);
+}
+
+/* Linha decorativa */
+.linha {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 4rem auto;
+  width: 80%;
+  margin-top: 10%;
+}
+
+@media (max-width: 480px) {
+  .titulo {
+    font-size: 1.8rem;
+  }
+
+  .cards {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  .conta {
+    width: 100%;
+  }
+}
+
+@media (max-width: 720px) {
+  .cards {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 1920px) {
+  .cards {
+    padding-left: 20rem;
+    padding-right: 20rem;
+  }
+}

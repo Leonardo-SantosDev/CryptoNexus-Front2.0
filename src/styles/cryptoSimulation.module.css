@@ -1,0 +1,167 @@
+.containerCriptos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  height: 100vh;
+  /* Garante que o conteúdo ocupe a altura total da tela */
+}
+
+.cryptoInput,
+.cryptoSelect {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cryptoInput label,
+.cryptoSelect label {
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+  color: var(--Lavender);
+}
+
+.cryptoInput input,
+.cryptoSelect select {
+  padding: 0.9rem 1rem;
+  background-color: #1c1a20;
+  color: var(--Lavender);
+  border: 1px solid #333;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+.cryptoInput input:focus,
+.cryptoSelect select:focus {
+  outline: none;
+}
+
+/* Estilos para o resultado da simulação */
+.simulationResult {
+  background: #26262B;
+  border-radius: 15px;
+  padding: 2rem;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: var(--Lavender);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  will-change: transform;
+  perspective: 1000px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.simulationResult::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 1px;
+  background: linear-gradient(90deg, #C084FC, #60A5FA, #7AF0FF, #C084FC);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.simulationResult:hover {
+  transform: scale(1.03) rotateX(5deg) rotateY(-5deg);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 0 0 20px rgba(112, 250, 255, 0.15);
+}
+
+.simulationResult:hover::before {
+  opacity: 1;
+}
+
+.simulationResult h3 {
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, #C084FC, #60A5FA, #7AF0FF, #C084FC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Estilo para o título */
+.tituloCripto {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, #C084FC, #60A5FA, #7AF0FF, #C084FC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.linha {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 4rem auto;
+  width: 80%;
+  margin-top: 10%;
+}
+
+@media (max-width: 768px) {
+  .containerCriptos {
+    padding: 2rem 1rem;
+    height: auto;
+  }
+
+  .cryptoInput,
+  .cryptoSelect {
+    max-width: 100%;
+    width: 90%;
+  }
+
+  .simulationResult {
+    width: 90%;
+    max-width: none;
+    padding: 1.5rem;
+  }
+
+  .tituloCripto {
+    font-size: 2rem;
+  }
+
+  .simulationResult h3 {
+    font-size: 1.3rem;
+  }
+
+  .linha {
+    width: 90%;
+    margin-top: 4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tituloCripto {
+    font-size: 1.8rem;
+  }
+
+  .simulationResult h3 {
+    font-size: 1.1rem;
+  }
+
+  .cryptoInput input,
+  .cryptoSelect select {
+    font-size: 0.95rem;
+    padding: 0.8rem;
+  }
+}

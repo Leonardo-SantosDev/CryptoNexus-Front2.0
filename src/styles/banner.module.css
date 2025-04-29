@@ -1,0 +1,170 @@
+.wrapper {
+    text-align: center;
+  }
+  
+.banner {
+    padding: 5rem;
+    margin-top: 5%;
+}
+
+  .titulo {
+    display: inline-block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    background: linear-gradient(90deg, #C084FC, #60A5FA, #7AF0FF, #C084FC);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .cardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+
+  .card {
+    background: #26262B;
+    border-radius: 15px;
+    padding: 1rem;
+    max-width: 300px;
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: var(--Lavender);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    will-change: transform;
+    perspective: 1000px;
+  }
+
+.cardTitulo {
+  font-size: 1.3rem;
+  background: linear-gradient(90deg, #C084FC, #60A5FA, #7AF0FF, #C084FC); 
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes fadeInCard {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 1px;
+  background: linear-gradient(90deg, #C084FC, #60A5FA, #7AF0FF, #C084FC);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.card:hover {
+    transform: scale(1.03) rotateX(5deg) rotateY(-5deg);
+    box-shadow:
+      0 10px 25px rgba(0, 0, 0, 0.3),
+      0 0 20px rgba(112, 250, 255, 0.15);
+  }
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.cardTitulo {
+  font-size: 1.3rem;
+  background-color: var(--Lavender);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.cardTexto {
+  line-height: 1.5;
+  margin-top: 0.5rem;
+  color: var(--Lavender);
+}
+
+  
+
+.textoFinal {
+  text-align: center;
+  margin-top: 3.5rem;
+  color: var(--Lavender);
+}
+
+.linha {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 4rem auto;
+    width: 80%;
+   margin-top: 10%;
+  }
+  
+
+@media (max-width: 720px) {
+  .banner {
+    padding: 3rem 2rem;
+  }
+
+  .cardsContainer {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 2rem;
+  }
+
+  .titulo {
+    font-size: 2rem;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .banner {
+    padding: 2rem 1rem;
+  }
+
+  .titulo {
+    font-size: 1.7rem;
+  }
+
+  .cardTitulo {
+    font-size: 1.1rem;
+  }
+
+  .cardTexto {
+    font-size: 0.95rem;
+  }
+}
+
+
+@media (min-width: 1920px) {
+  .cardsContainer {
+    padding-left: 20rem;
+    padding-right: 20rem;
+  }
+}

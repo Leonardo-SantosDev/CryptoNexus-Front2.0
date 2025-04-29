@@ -1,0 +1,170 @@
+.pageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    animation: fadeIn 1s ease-out;
+    flex-direction: column;
+}
+
+.funcionalidades {
+    max-width: 700px;
+    width: 100%;
+    background: rgba(28, 26, 32, 0.6);
+    backdrop-filter: blur(12px);
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    font-family: 'Inter', sans-serif;
+    color: var(--Lavender);
+    position: relative;
+    animation: slideUp 0.8s ease-out;
+}
+
+.closeButton {
+    position: absolute;
+    top: 14px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    color: var(--Lavender);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    animation: scaleIn 0.5s ease-in-out;
+}
+
+.closeButton:hover {
+    transform: scale(1.1);
+    color: #ff6b6b;
+}
+
+.funcionalidades h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    background: linear-gradient(90deg, #C084FC, #60A5FA, #7AF0FF, #C084FC);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: textSlideIn 1s ease-out;
+}
+
+.subtitulo {
+    text-align: center;
+    font-size: 1rem;
+    color: var(--Lavender);
+    margin-bottom: 2rem;
+}
+
+.lista {
+    list-style: none;
+    padding: 0;
+    color: var(--Lavender);
+    line-height: 1.7;
+}
+
+.lista li {
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+    border-left: 3px solid #26262B;
+    animation: fadeInList 0.5s ease-out;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes textSlideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInList {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .funcionalidades {
+        padding: 2rem 1rem;
+    }
+
+    .funcionalidades h2 {
+        font-size: 1.8rem;
+    }
+
+    .subtitulo {
+        font-size: 0.9rem;
+    }
+
+    .lista li {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .funcionalidades {
+        padding: 1.5rem;
+    }
+
+    .funcionalidades h2 {
+        font-size: 1.6rem;
+    }
+
+    .subtitulo {
+        font-size: 0.8rem;
+    }
+
+    .lista li {
+        font-size: 0.8rem;
+    }
+
+    .closeButton {
+        top: 10px;
+        right: 8px;
+    }
+}
