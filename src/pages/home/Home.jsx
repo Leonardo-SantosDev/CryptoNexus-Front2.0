@@ -13,7 +13,7 @@ import { ExplorarNexus } from "../../components/ExplorarNexus";
 import EducacaoFinanceira from "../../components/EducacaoFinanceira";
 import GlossarioCripto from "../../components/GlossarioCripto";
 // import QuizInterativo from "../../components/QuizInterativo";
-import AlertasMercado from "../../components/AlertasMercado";
+// import AlertasMercado from "../../components/AlertasMercado";
 
 export default function Home() {
   return (
@@ -25,7 +25,7 @@ export default function Home() {
       <GlossarioCripto/>
       {/* <CryptoSimulation/> */}
       {/* <QuizInterativo/> */}
-      <AlertasMercado/>
+      {/* <AlertasMercado/> */}
       <EducacaoFinanceira />
       <Comunidade />
       <AppSection />
